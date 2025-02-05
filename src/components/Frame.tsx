@@ -99,8 +99,9 @@ export default function Frame() {
 
   const handleShare = useCallback(async () => {
     try {
-      await sdk.actions.shareResults({
-        message: `I Flarbed ${count} times and hit the target of ${target}! Can you Flarb better?`,
+      // Corrected SDK action name from shareResults to share
+      await sdk.actions.share({
+        text: `I Flarbed ${count} times and hit the target of ${target}! Can you Flarb better?`,
       });
     } catch (error) {
       console.error('Share failed:', error);
